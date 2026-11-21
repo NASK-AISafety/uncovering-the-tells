@@ -1,13 +1,32 @@
-# Uncovering the Tells: Efficient Black-Box Audits for LLM Data Contamination
+<h1 align="center">Uncovering the Tells: Efficient Black-Box Audits for LLM Data Contamination</h1>
 
-Dominik B. Lau\*, Filip Pawlicki\*, Jan Dubiński, Sebastian Cygert
+<p align="center">
+  <b>Dominik B. Lau</b><sup>*</sup> &nbsp;·&nbsp;
+  <b>Filip Pawlicki</b><sup>*</sup> &nbsp;·&nbsp;
+  Jan Dubiński &nbsp;·&nbsp;
+  Sebastian Cygert
+  <br>
+  <i>NASK National Research Institute</i>
+  <br>
+  <sub><sup>*</sup> Equal contribution</sub>
+</p>
 
-NASK National Research Institute
+<p align="center">
+  <a href="https://arxiv.org/abs/0000.00000"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</p>
 
-\* Equal contribution
+> Existing methods for assessing training data contamination in Large Language Models achieve high accuracy, but fundamentally rely on gray-box access, rendering them inapplicable to fully black-box environments. This limitation forces auditors to rely on full-sequence sampling or rigid heuristics, both of which incur prohibitive inference costs and struggle to isolate the underlying memorization signal. To overcome this, we propose a generation-based black-box framework that infers context-induced information gain from targeted token discrepancies. We introduce a budget-constrained auditing regime, building on the empirical observation that the membership signal is highly sparse and concentrated in a few highly informative tokens. We formalize this sparsity, 
+showing why uniform sampling needs many more samples than a policy that targets informative positions.
+Empirically, our approach achieves state-of-the-art black-box separation accuracy while needing about $3\times$ fewer queries than uniform position sampling. Finally, we apply this methodology to closed frontier models, exploring its capacity and limits in surfacing potential training data overlaps on commercial APIs.
 
-This repository contains the LCS audit from our paper. It checks whether a dataset was
-part of a language model's training data.
+<p align="center">
+  <img src="assets/hero_figure.png" alt="Overview of the LCS audit" width="100%">
+</p>
+
+**(a)** With the same query budget, naive black-box sampling mostly hits uninformative tokens, while LCS targets the positions where the in-context documents overlap with the text, which is where contamination shows up. **(b)** This reaches the same detection AUC with about 3× fewer queries per document, and sits between prior black-box methods and the gray-box CoDeC baseline, which needs access to logits.
+
+**This repository** contains the LCS audit from our paper. It computes a contamination score for a dataset: a higher score means the model is more likely to have seen it in training.
 
 ## How it works
 
@@ -143,6 +162,12 @@ lcs_audit/
   data.py      dataset loading
   metrics.py   score, AUC, TPR and confidence intervals
 ```
+
+## Citation
+
+TODO
+<!-- 
+-->
 
 ## License
 
