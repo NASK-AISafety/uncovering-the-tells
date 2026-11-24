@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/0000.00000"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper"></a>
+  <a href="https://arxiv.org/abs/2611.30639"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
 </p>
 
@@ -165,9 +165,17 @@ lcs_audit/
 
 ## Citation
 
-TODO
-<!-- 
--->
+```
+@misc{uncoveringthetells,
+      title={Uncovering the Tells: Efficient Black-Box Audits for LLM Data Contamination}, 
+      author={Dominik Bernard Lau and Filip Pawlicki and Jan Dubiński and Sebastian Cygert},
+      year={2026},
+      eprint={2611.30639},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2611.30639}, 
+}
+```
 
 ## License
 
